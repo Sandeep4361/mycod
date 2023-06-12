@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: rgb(78, 78, 105);
+            font-size: 20px ;
+            color: white;
+            border-radius: 20px;
+            
+        }
+        button:hover{
+            color: antiquewhite;
+            background-color: chartreuse;
+
+        }
+
+div{
+    /* text-align: center; */
+   margin: 10px;
+   
+    height: 20px;
+    color: blueviolet;
+    box-sizing: border-box;
+           
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text " value="" id="input1" placeholder="full name" required/>
+
+    </div>
+    
+    <div>
+        <label for="aadhar number">Aadhar number:</label>
+<input type="number" value=" " id="input2" placeholder="aadhar number" /><br>
+
+    </div>
+    <div>
+        <label for="date of berth">D:O:B</label>
+        <input type="date" value="" id="input3"/><br> 
+    </div>
+   
+    <div>
+         <button onclick="app()">apply</button>
+    </div>
+   
+</body>
+<script>
+
+let a=document.getElementById("input1");
+let b=document.getElementById("input2");
+let c=document.getElementById("input3");
+
+function app() {
+    console.log(a.value);
+    console.log(b.value);
+    console.log(c.value);
+}
+
+</script>
+ 
+<!-- </html> 
+
+<html>
+  <head>
+    <title>Practise Selectors</title>
+    <style>
+ body{
+  background-color: lightpink;
+ }
+    </style>
+  </head>
+  <body>
+    <h1 >First-H1</h1>
+    <h1 >Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <h5>First H5</h5>
+    <h5>Second H5</h5>
+    <h5>Third H5</h5>
+    <div class="green">First DIV</div>
+    <div class="red">Second DIV</div>
+    <div class="blue">Third DIV</div>
+    <p class="green">First P</p>
+    <p class="red">Second P</p>
+    <p class="blue">Third P</p>
+    <hr />
+    <button onClick="changeH1()">Change H1</button>
+    <button onClick="changeH3()">Change H3</button>
+    <button onClick="changeH5()">Change H5</button>
+    <button onClick="changeGreen()">Change Green</button>
+    <button onClick="changeRed()">Change Red</button>
+    <button onClick="changeBlue()">Change Blue</button>
+    <script>
+      function changeH1() {
+         const firstH1 = document.getElementsByTagName("h1");
+        for(let i=0;i<firstH1.length;i++){
+              firstH1[i].style.color = "red";
+        }
+       
+    
+      }
+
+      function changeH3() {
+        const h3Elements = document.getElementsByTagName("h3");
+        for (let i = 0; i < h3Elements.length; i++) {
+          h3Elements[i].style.color = "green";
+        }
+      }
+
+      function changeH5() {
+        const h5Elements = document.getElementsByTagName("h5");
+        for (let i = 0; i < h5Elements.length; i++) {
+          h5Elements[i].style.color = "blue";
+        }
+      }
+
+      function changeGreen() {
+        const greenElements = document.getElementsByClassName("green");
+        for (let i = 0; i < greenElements.length; i++) {
+          greenElements[i].style.color = "green";
+        }
+      }
+
+      function changeRed() {
+        const redElements = document.getElementsByClassName("red");
+        for (let i = 0; i < redElements.length; i++) {
+          redElements[i].style.color = "red";
+        }
+      }
+
+      function changeBlue() {
+        const blueElements = document.getElementsByClassName("blue");
+        for (let i = 0; i < blueElements.length; i++) {
+          blueElements[i].style.color = "blue";
+        }
+      }
+    </script>
+  </body>
+</html> -->

@@ -1,0 +1,93 @@
+/* Write your styles here  */
+
+*{
+  box-sizing: border-box;
+}
+
+#header{
+  text-align: center;
+}
+
+#doctors{
+  width: 90%;
+  margin: auto;
+ 
+display: grid;
+grid-template-columns: repeat(4 ,1fr);
+gap: 10px;
+text-align: center;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+#doctors img{
+  width: 100%;
+}
+
+
+.butt{
+  display: flex;
+ justify-content: space-around;
+}
+.b1{
+  margin-right: 30px;
+}
+
+
+
+
+body {
+background-color: white;
+  
+}
+
+#service{
+  width: 90%;
+ gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3 ,1fr);
+  margin-top: 50px;
+  text-align: center;
+
+}
+
+
+
+
+/* keep media queries at the bottom */
+/* Medium screens */
+@media all and (min-width: 451px) and (max-width: 750px) {
+
+
+  #doctors{
+    grid-template-columns: repeat(2 ,1fr);
+ 
+  
+  }
+
+
+  #service{
+    grid-template-columns: repeat(2 ,1fr);
+ 
+  
+  }
+ 
+
+}
+/* Small screens */
+@media all and (min-width: 100px) and (max-width: 450px) {
+  #doctors{
+    grid-template-columns: repeat(1 ,1fr);
+ 
+  
+  }
+
+  #service{
+    grid-template-columns: repeat(1 ,1fr);
+  
+  
+  }
+
+}
+
+
+
+

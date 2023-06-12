@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  name  <input type="text" value=" " id="input1"/><br>
+  mobile : <input type="number" value="" id="input2" /> <br>
+  dob : <input type="date" value="" id="input3" /> <br>
+   email: <input type="email" value="" id="input4" /> <br>
+    gander <select name="" id="gender">
+ <option value="">select gender</option>
+ <option value="male">Male</option>
+ <option value="female">Female</option>
+    </select>
+
+    <button onclick="touch()">submit</button>
+</body>
+<script>
+    let in1=document.getElementById("input1");
+   let in2=document.getElementById("input2");
+   let in3=document.getElementById("input3");
+   let in4= document.getElementById("input4");
+   let gen=document.getElementById("gender");
+
+   function touch (){
+    console.log(in1.value);
+    console.log(in2.value);
+    console.log(in3.value);
+    console.log(in4.value);
+    console.log(gen.value);
+ 
+   }
+
+
+</script>
+
+</html>

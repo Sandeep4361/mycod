@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.content{
+    width: 90%;
+    /* border: 2px solid rgb(128, 0, 15); */
+    margin: auto;
+    background-color: whitesmoke;
+    display: flex;
+ 
+}
+.content>div{
+    width: 100%;
+    /* height: 50px; */
+    background-color: yellow;
+    font-size: 40px;
+    padding-left: 10px;
+
+}
+
+.con2{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    /* border: 2px solid red; */
+
+    margin-top: 20px;
+  
+}
+.con2>div{
+    width:90% ;
+    height: 300px;
+    margin: 10px;
+    
+}
+.con2>div:nth-child(1){
+    background-color: lightsalmon;
+}
+.con2>div:nth-child(2){
+    background-color: rgb(51, 48, 46);
+}
+.con2>div:nth-child(3){
+    background-color: rgb(108, 89, 84);
+}
+.con2>div:nth-child(4){
+    background-color: rgb(81, 30, 14);
+}
+
+@media screen and (max-width:500px) {
+    .content{
+ flex-direction: column;
+        gap: 20px;     
+    }
+    .content>div{
+        width: 60%;
+        margin: auto;
+        display: flex;
+    }
+   
+}
+@media screen and (max-width:500px) {
+    .con2{
+        flex-direction: column; 
+       
+        gap: 10px;
+    }
+    .con2>div{
+        width: 70%;
+        margin: auto;
+        /* display: flex; */
+    }
+    
+}
+
+@media screen and (min-width:501px) and (max-width:900px) {
+    .con2{
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(2 ,300px);
+      display: grid;
+      gap: 20px;
+    }
+    .con2>div{
+        width: 90%;
+        margin: auto;
+        gap: 10px;
+
+    }
+    
+}
+
+    </style>
+</head>
+<body>
+    
+<div class="content">
+    <div> Navigation</div>
+      </div>
+    <div class="con2">
+        <div> BOX1</div>
+        <div> BOX2</div>
+        <div> BOX3</div>
+        <div> BOX4</div>
+
+  
+</div>
+
+</body>
+</html>

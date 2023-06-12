@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer Clock</title>
+  <style>
+    .timer-clock {
+  font-size: 48px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#hours,
+#minutes,
+#seconds {
+  display: inline-block;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+  </style>
+  
+</head>
+<body>
+  <div class="timer-clock">
+    <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+    
+  </div>
+
+  
+</body>
+</html>
+<script>
+
+// HTML elements
+const hoursElement = document.getElementById("hours");
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
+
+// Timer function
+function startTimer() {
+  let hours = 0;
+  let minutes = 0;
+  let seconds = 0;
+
+  setInterval(() => {
+    seconds++;
+    if (seconds === 60) {
+      seconds = 0;
+      minutes++;
+      if (minutes === 60) {
+        minutes = 0;
+        hours++;
+      }
+    }
+
+    // Update the HTML elements
+    hoursElement.textContent = hours.toString().padStart(2, "0");
+    minutesElement.textContent = minutes.toString().padStart(2, "0");
+    secondsElement.textContent = seconds.toString().padStart(2, "0");
+  }, 1000);
+}
+
+// Start the timer
+startTimer();
+
+
+</script>

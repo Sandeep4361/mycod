@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#headingId{
+  color: red;
+}
+
+.heading{
+  color: green;
+}
+#heading1Id{
+  color: gold;
+}
+
+    </style>
+</head>
+<body>
+    
+    <h1>heading</h1>
+<button onclick="js()">Red</button>
+<button onclick="jss()">green</button>
+<button onclick="jj()">gold</button>
+</body>
+</html>
+<script>
+let heading=document.querySelector("h1");
+
+function js() {
+
+//  heading.style .color="red";
+//   heading.style.backgroundColor="green";
+
+// 
+    
+    heading.id ="headingId";
+
+}
+function jss () {
+     heading.setAttribute("class","heading");
+    
+}
+function jj () {
+    heading.id ="heading1Id";
+
+}
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:  rgb(69, 74, 74);
+        }
+#Keybord{
+    display: grid;
+    width: 340px;
+    margin: auto;
+    grid-template-columns: 100px 100px 100px ;
+    grid-template-rows: 100px 100px 100px 100px ;
+  
+    gap: 10px;
+    margin: 10px auto;
+    padding: 20px;
+   border-radius: 20px;
+    box-shadow: rgba(120, 150, 160, 0.15) 2.95px 2.95px 5.6px;
+
+    
+}
+
+#Keybord > button {
+    background-color: black;
+    color: white;
+    font-size: 50px ;
+    border: 2px solid black;
+    border-radius: 50%;
+    line-height: 100px;
+    
+
+}
+
+
+.q{
+    width: 330px;
+    height: auto;
+    
+    text-align: center;
+
+
+}
+.q > button {
+    background-color: black;
+    color: white;
+    font-size: 50px ;
+    border: 2px solid black;
+    border-radius: 50%;
+    line-height: 100px;
+    background-color:rgb(238, 27, 27);
+    
+
+}
+
+   
+    #Display{
+        margin: auto;
+        width: 330px;
+        height: 70px;
+        border: 2px solid gray;
+        font-size: 40px;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: rgba(120, 150, 160, 0.15) 2.95px 2.95px 5.6px;
+        background-color: whitesmoke;
+    }
+   
+    </style>
+</head>
+<body>
+    <div id="Display"></div>
+    <div id="Keybord">
+        <button onclick="touch('1')">1</button>
+        <button onclick="touch('2')">2</button>
+        <button onclick="touch('3')">3</button>
+        <button onclick="touch('4')">4</button>
+        <button onclick="touch('5')">5</button>
+        <button onclick="touch('6')">6</button>
+        <button onclick="touch('7')">7</button>
+        <button onclick="touch('8')">8</button>
+        <button onclick="touch('9')">9</button>
+        <button onclick="touch('*')">*</button>
+        <button onclick="touch('0')">0</button>
+        <button onclick="touch('#')">#</button>
+        
+          
+           <div class="q">
+                <button onclick="CallAll()">call</button>
+           </div>
+       
+     
+       
+        
+    </div>
+</body>
+</html>
+<script>
+var out="";
+function touch(num){
+   
+    out=out+num;
+    document.querySelector("#Display").textContent = out;
+
+   
+}
+function CallAll (){
+    document.querySelector("#Display").textContent = "";
+    out="";
+}
+
+</script>

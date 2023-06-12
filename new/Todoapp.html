@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+div{
+    display: flex;
+    justify-content: space-between;
+}
+form{
+    margin: auto;
+    margin-top: 50px;
+    width: 30%;
+    box-shadow: rgb(149, 158,168,0.2) 0px 8px 24px;
+    padding: 30px;
+}
+table{
+    font-size: 20px;
+}
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+
+}
+table td,
+table th {
+    border: 2px solid teal;
+    padding: 8px;
+    text-align: center;
+}
+table tr:nth-child(even){
+    background-color: aqua;
+}
+table tr:hover{
+    background-color: blue;
+}
+table th{
+    padding-top: 10px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:#0468aa;
+    color: white;
+    text-align: center;
+
+}
+input[type="text"],
+select,
+textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid dodgerblue;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    resize: vertical;
+
+}
+input[type="number"],
+select,
+textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid dodgerblue;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    resize: vertical;
+
+}
+
+input[type="submit"]{
+    background-color: #0468aa;
+    color: white;
+    padding: 12px 12px ;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+}
+
+input[type="submit"]:hover{
+    background-color: #3973bb;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    text-transform:uppercase;
+    font-family: monospace;
+    color: #0468aa;
+    text-decoration: underline;
+
+}
+
+    </style>
+</head>
+<body>
+    <!-- Dont make any changes here -->
+    <h1>TODO App</h1>
+    
+
+    <div>
+      <!-- ***** We are using form here  ****  -->
+      <form id="form">
+        <label for="">Task Name</label><br />
+        <input id="Task1" type="text" placeholder="Enter Task Name" /><br />
+       
+        <label  for="">Vagitable Names</label> <br>
+        <input type="text" name="" id="VAgetable" placeholder="Qunit"><br>
+        
+         <label for="">Priority </label><br />
+        <select id="Priority">
+          <option value="">Select Priority</option>
+          <option value="High">High</option>
+          <option value="Low">Low</option>
+        ><br />
+        <input type="submit" />
+      </form>
+       <ul id="taskList"></ul>
+
+      <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Task</th>
+           
+            <th>Priority</th>
+             <th>Vagitable Names</th>
+            <th>Marke</th>
+            <th>Favourite2</th>
+
+           
+
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Append your output to tbody -->
+        <h1 id="todo"></h1>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+<script>
+
+
+let form = document.querySelector("form");
+let tableBody = document.querySelector("tbody");
+let taskList = document.getElementById("taskList");
+let todos = [];
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let taskInput1 = document.getElementById("Task1");
+  let priorityInput = document.getElementById("Priority");
+  let taskInput3 = document.getElementById("VAgetable");
+
+  let newRow = document.createElement("tr");
+
+  let taskCell = document.createElement("td");
+  let vagetableCell = document.createElement("td");
+  let priorityCell = document.createElement("td");
+  let markCell = document.createElement("td");
+  let quantityCell = document.createElement("td");
+
+  taskCell.innerText = taskInput1.value;
+  vagetableCell.innerText = taskInput3.value;
+  priorityCell.innerText = priorityInput.value;
+  markCell.innerText = "❤️";
+  quantityCell.innerText = "✔";
+
+  newRow.appendChild(taskCell);
+  newRow.appendChild(priorityCell);
+  newRow.appendChild(markCell);
+  newRow.appendChild(quantityCell);
+  newRow.appendChild(vagetableCell);
+  tableBody.appendChild(newRow);
+
+  todos.push({
+    task: taskInput1.value,
+    priority: priorityInput.value,
+    vagetable: taskInput3.value,
+  });
+
+  form.reset();
+
+  saveToLocalStorage();
+});
+
+function saveToLocalStorage() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function retrieveFromLocalStorage() {
+  let storedTodos = localStorage.getItem("todos");
+  if (storedTodos) {
+    todos = JSON.parse(storedTodos);
+
+    todos.forEach(function (todo) {
+      let newRow = document.createElement("tr");
+
+      let taskCell = document.createElement("td");
+      let vagetableCell = document.createElement("td");
+      let priorityCell = document.createElement("td");
+      let markCell = document.createElement("td");
+      let quantityCell = document.createElement("td");
+
+      taskCell.innerText = todo.task;
+      vagetableCell.innerText = todo.vagetable;
+      priorityCell.innerText = todo.priority;
+      markCell.innerText = "❤️";
+      quantityCell.innerText = "✔";
+
+      newRow.appendChild(taskCell);
+      newRow.appendChild(priorityCell);
+      newRow.appendChild(markCell);
+      newRow.appendChild(quantityCell);
+      newRow.appendChild(vagetableCell);
+      tableBody.appendChild(newRow);
+    });
+  }
+}
+
+retrieveFromLocalStorage();
+
+
+
+</script>

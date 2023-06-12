@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont {
+            display: flex;
+            gap: 60px;
+       
+        
+        }
+        .smallDiv{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        #cont >div >div >p:nth-child(2){
+            text-decoration: line-through ;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="cont"></div>
+
+    <script>
+        var data = [
+            {
+                imagUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNUPKJE9PqIfQTtg7PeSUmP8vEoRCxUwVf0CW8N_GfUhKlmfeHa06YUyrtJz63G1xKnX8&usqp=CAU",
+                name: "Moke dreers",
+                price: "$250.00",
+                StricedOfferPrice: "$100.00"
+            },
+            {
+                imagUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNUPKJE9PqIfQTtg7PeSUmP8vEoRCxUwVf0CW8N_GfUhKlmfeHa06YUyrtJz63G1xKnX8&usqp=CAU",
+                name: "Moke dreers",
+                price: "$250.00",
+                StricedOfferPrice: "$100.00"
+            },
+            {
+                imagUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNUPKJE9PqIfQTtg7PeSUmP8vEoRCxUwVf0CW8N_GfUhKlmfeHa06YUyrtJz63G1xKnX8&usqp=CAU",
+                name: "model dreers",
+                price: "$150.00",
+                StricedOfferPrice: "$100.00"
+            },
+            {
+                imagUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNUPKJE9PqIfQTtg7PeSUmP8vEoRCxUwVf0CW8N_GfUhKlmfeHa06YUyrtJz63G1xKnX8&usqp=CAU",
+                name: "model dreers",
+                price: "$350.00",
+                StricedOfferPrice: "$100.00"
+            },
+            {
+                imagUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNUPKJE9PqIfQTtg7PeSUmP8vEoRCxUwVf0CW8N_GfUhKlmfeHa06YUyrtJz63G1xKnX8&usqp=CAU",
+                name: "femal dreers",
+                price: "$270.00",
+                StricedOfferPrice: "$100.00"
+            },
+            {
+                imagUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNUPKJE9PqIfQTtg7PeSUmP8vEoRCxUwVf0CW8N_GfUhKlmfeHa06YUyrtJz63G1xKnX8&usqp=CAU",
+                name: "femail dreers",
+                price: "$290.00",
+                StricedOfferPrice: "$100.00"
+            }
+        ];
+
+        data.map(function (elem) {
+            var mainDiv = document.createElement('div');
+            var img = document.createElement('img');
+            img.setAttribute("src", elem.imagUrl);
+            var h4 = document.createElement("h4");
+            h4.textContent = elem.name;
+            var smallDiv = document.createElement("div");
+            smallDiv.setAttribute("class", "smallDiv");
+            var p = document.createElement("p");
+            p.textContent = elem.price;
+
+            var stricedOfferPrice = document.createElement("p");
+            stricedOfferPrice.setAttribute("class", "price2");
+            stricedOfferPrice.textContent = elem.StricedOfferPrice;
+
+            smallDiv.append(p, stricedOfferPrice);
+            mainDiv.append(img, h4, smallDiv);
+            document.getElementById("cont").append(mainDiv);
+        });
+    </script>
+</body>
+</html>

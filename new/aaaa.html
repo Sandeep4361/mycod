@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+</head>
+<body>
+    <h1>To-Do App</h1>
+    <form id="todoForm">
+        <input type="text" id="taskInput" placeholder="Enter Task">
+        <button type="submit">Add Task</button>
+    </form>
+    <ul id="taskList"></ul>
+
+    <script>
+        // Get references to HTML elements
+        const form = document.getElementById("todoForm");
+        const taskInput = document.getElementById("taskInput");
+        const taskList = document.getElementById("taskList");
+
+        // Add event listener to the form
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const task = taskInput.value;
+            if (task) {
+                // Add the task to local storage
+                addTaskToLocalStorage(task);
+
+                // Clear the task input
+                taskInput.value = "";
+
+                // Refresh the task list
+                displayTasksFromLocalStorage();
+            }
+        });
+
+        // Function to add a task to local storage
+        function addTaskToLocalStorage(task) {
+            let tasks;
+            if (localStorage.getItem("tasks") === null) {
+                tasks = [];
+            } else {
+                tasks = JSON.parse(localStorage.getItem("tasks"));
+            }
+
+            tasks.push(task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        // Function to display tasks from local storage
+        function displayTasksFromLocalStorage() {
+            taskList.innerHTML = "";
+
+            if (localStorage.getItem("tasks") !== null) {
+                const tasks = JSON.parse(localStorage.getItem("tasks"));
+                tasks.forEach(function(task) {
+                    const li = document.createElement("li");
+                    li.textContent = task;
+                    taskList.appendChild(li);
+                });
+            }
+        }
+
+        // Initial display of tasks
+        displayTasksFromLocalStorage();
+    </script>
+</body>
+</html>

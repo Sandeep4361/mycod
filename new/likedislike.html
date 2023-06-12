@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="./imgg/ms2.png" alt="" id="Image">
+
+<button id="likeButton">Like    </button>
+<button id="dislikeButton">Dislike </button>
+
+
+
+    </div>
+</body>
+</html>
+<script>
+// Retrieve the image element and buttons
+let image = document.getElementById("image");
+let likeButton = document.getElementById("likeButton");
+let dislikeButton = document.getElementById("dislikeButton");
+
+// Check if the like and dislike counts are stored in localStorage
+let likeCount = localStorage.getItem("likeCount");
+let dislikeCount = localStorage.getItem("dislikeCount");
+
+// Initialize the like and dislike counts if not present in localStorage
+if (!likeCount) {
+  likeCount = 0;
+}
+
+if (!dislikeCount) {
+  dislikeCount = 0;
+}
+
+// Update the button texts with the current counts
+likeButton.innerText = "Like " + likeCount;
+dislikeButton.innerText = "Dislike " + dislikeCount;
+
+// Add click event listeners to the like and dislike buttons
+likeButton.addEventListener("click", function() {
+  likeCount++;
+  likeButton.innerText = "Like " + likeCount;
+  localStorage.setItem("likeCount", likeCount);
+});
+
+dislikeButton.addEventListener("click", function() {
+  dislikeCount++;
+  dislikeButton.innerText = "Dislike " + dislikeCount;
+  localStorage.setItem("dislikeCount", dislikeCount);
+});
+
+
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont{
+            display: flex;
+        }
+        img{
+            width: 200px;
+            height: 300px;
+        }
+   
+    </style>
+</head>
+<body>
+    <div id="cont"></div>
+</body>
+</html>
+<script>
+var img=document.createElement("img");
+img.setAttribute("src","https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fHww&w=1000&q=80")
+
+   let rightdiv =document.createElement("div");
+  
+        let h1 = document.createElement("h1");
+        h1.textContent="sandeep";
+        let p = document.createElement("p");
+        p.textContent="In this code, an image element is created using <br>In this code, an image element is created using "
+        let btn = document.createElement("button");
+        btn.textContent="Profile"
+rightdiv.append(h1, p, btn);
+document.getElementById('cont').append(img,rightdiv);
+
+
+</script>
